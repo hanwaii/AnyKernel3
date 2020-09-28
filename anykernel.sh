@@ -4,24 +4,21 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=ExampleKernel by osm0sis @ xda-developers
+kernel.string=HashKernel by Hash
 do.devicecheck=1
 do.modules=0
-do.systemless=1
+do.systemless=0
 do.cleanup=1
-do.cleanuponabort=0
-device.name1=maguro
-device.name2=toro
-device.name3=toroplus
-device.name4=tuna
-device.name5=
+do.cleanuponabort=1
+device.name1=walleye
+device.name2=taimen
 supported.versions=
 supported.patchlevels=
 '; } # end properties
 
 # shell variables
-block=/dev/block/platform/omap/omap_hsmmc.0/by-name/boot;
-is_slot_device=0;
+block=/dev/block/bootdevice/by-name/boot;
+is_slot_device=1;
 ramdisk_compression=auto;
 
 
@@ -61,4 +58,3 @@ append_file fstab.tuna "usbdisk" fstab;
 
 write_boot;
 ## end install
-
